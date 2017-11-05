@@ -19,7 +19,7 @@
 
 `$ make`
 
-**Exeucte The Binary **
+**Exeucte The Binary**
 
 `$ ./bin/project`
 
