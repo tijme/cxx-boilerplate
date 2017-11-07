@@ -5,8 +5,8 @@
 #include "helpers/Config.cpp"
 
 int main(int argc, char *argv[]) {
-    Helpers::Config::printBanner();
-    Helpers::Config::initializeArgs(argc, argv);
+    helpers::Config::printBanner();
+    helpers::Config::initializeArgs(argc, argv);
     
     return EXIT_SUCCESS;
 }

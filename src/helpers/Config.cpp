@@ -7,7 +7,7 @@
  * Define version
  */
 #if defined(PROJECT_VERSION)  
-const std::string Helpers::Config::version = PROJECT_VERSION;
+const std::string helpers::Config::version = PROJECT_VERSION;
 #else
 throw new std::exception("The -DPROJECT_VERSION flag was not set.");
 #endif
@@ -16,7 +16,7 @@ throw new std::exception("The -DPROJECT_VERSION flag was not set.");
  * Define name
  */
 #if defined(PROJECT_NAME)  
-const std::string Helpers::Config::name = PROJECT_NAME;
+const std::string helpers::Config::name = PROJECT_NAME;
 #else
 throw new std::exception("The -DPROJECT_NAME flag was not set.");
 #endif
@@ -24,23 +24,23 @@ throw new std::exception("The -DPROJECT_NAME flag was not set.");
 /**
  * Define description
  */
-const std::string Helpers::Config::description = "A small description of your project (a one line explanation).";
+const std::string helpers::Config::description = "A small description of your project (a one line explanation).";
 
 /**
- * Define authors
+ * Define author
  */
-const std::string Helpers::Config::authors = "Project Author <author@example.ltd>";
+const std::string helpers::Config::author = "Project Author <author@example.ltd>";
 
 /**
  * Define default options
  */
-bool Helpers::Config::optDaemon = false;
-bool Helpers::Config::optDebug = false;
+bool helpers::Config::optDaemon = false;
+bool helpers::Config::optDebug = false;
 
 /**
  * Print a banner 
  */
-void Helpers::Config::printBanner() {
+void helpers::Config::printBanner() {
     std::cout << "██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗" << std::endl;
     std::cout << "██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝" << std::endl;
     std::cout << "██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   " << std::endl;
@@ -48,15 +48,15 @@ void Helpers::Config::printBanner() {
     std::cout << "██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   " << std::endl;
     std::cout << "╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   " << std::endl;
 
-    std::cout << "Version " << Helpers::Config::version << " - Copyright 2017 " << Helpers::Config::authors << std::endl;
+    std::cout << "Version " << helpers::Config::version << " - Copyright 2017 " << helpers::Config::author << std::endl;
     std::cout << std::endl;
 }
 
 /**
  * Initialize all arguments
  */
-cxxopts::Options Helpers::Config::initializeArgs(int argc, char *argv[]) {
-    cxxopts::Options options(Helpers::Config::name, Helpers::Config::description + std::string("\n"));
+cxxopts::Options helpers::Config::initializeArgs(int argc, char *argv[]) {
+    cxxopts::Options options(helpers::Config::name, helpers::Config::description + std::string("\n"));
 
     options.add_options()
         ("h,help",          "Print this help message and exit.")
@@ -79,8 +79,8 @@ cxxopts::Options Helpers::Config::initializeArgs(int argc, char *argv[]) {
     }
 
     // Set all options
-    Helpers::Config::optDebug = !!options.count("debug");
-    Helpers::Config::optDaemon = !!options.count("daemon");
+    helpers::Config::optDebug = !!options.count("debug");
+    helpers::Config::optDaemon = !!options.count("daemon");
 
     return options;
 }
