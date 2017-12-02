@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cxxopts.hpp>
 
-#include "helpers/Config.cpp"
+#include "helpers/Config.hpp"
 
 int main(int argc, char *argv[]) {
     helpers::Config::printBanner();
