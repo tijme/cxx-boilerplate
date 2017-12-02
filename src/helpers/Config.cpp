@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-#include "Config.h"
+#include "Config.hpp"
 #include <cxxopts.hpp>
 
 /**
